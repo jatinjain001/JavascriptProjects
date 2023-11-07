@@ -1,3 +1,66 @@
+const rates ={
+    "usd":{
+        "INR":83.27,
+        "pound":0.80,
+        "euros":0.93,
+        "taka": 109.84,
+        "yuan": 7.27,
+        "dinar": 0.308
+    },
+    "INR":{
+        "usd":0.012,
+        "pound":0.0098,
+        "euros":0.011,
+        "taka": 1.33,
+        "yuan": 0.087,
+        "dinar":0.0037
+
+    },
+    "pound":{
+        "INR":102.49,
+        "usd":1.23,
+        "euros":1.15,
+        "taka": 136.24,
+        "yuan": 8.97,
+        "dinar":0.38
+
+    },
+    "euros":{
+        "INR":89.05,
+        "pound":0.87,
+        "usd":1.07,
+        "taka": 118.38,
+        "yuan": 7.79,
+        "dinar":0.33
+    },
+    "taka":{
+        "INR":0.75,
+        "pound":0.0073,
+        "euros":0.0085,
+        "usd": 0.0090,
+        "yuan": 0.066,
+        "dinar":0.0037
+
+    },
+    "yuan":{
+        "INR":11.63,
+        "pound":0.11,
+        "euros":0.13,
+        "taka": 15.69,
+        "usd": 0.14,
+        "dinar":0.0425
+    },
+    "dinar":{
+        "INR":269.68,
+        "pound":2.63,
+        "euros":3.03,
+        "taka": 358.47,
+        "yuan": 23.59,
+        "usd":3.24
+    }
+
+}
+
 const units=document.getElementById('unit')
 const con=document.getElementById('convert')
 const input=document.getElementById('inputval')
@@ -5,6 +68,7 @@ const input=document.getElementById('inputval')
 
 const convertBtn=document.querySelector('.btn')
 const output=document.getElementById('conversion')
+
 function outputList(){
     var units=document.getElementById('convert')
     var converted=units.options[units.selectedIndex].value;
@@ -22,152 +86,7 @@ const convert= function(tobeConverted=list(),converted=outputList()){
     if(tobeConverted === converted){
         answer=number
     }
-    else if(tobeConverted === "usd" ){
-        if(converted === "INR"){
-            answer=number*83.27
-        }
-        if(converted === "euros"){
-            answer=number*0.93
-        }
-        if(converted === "pound"){
-            answer=number*0.80
-        }
-        if(converted === "dinar"){
-            answer=number*0.308
-        }
-        if(converted === "taka"){
-            answer=number*109.84
-        }
-        if(converted === "yuan"){
-            answer=number*7.27
-        }
-    
-    }
-    else if(tobeConverted === "pound" ){
-        if(converted === "INR"){
-            answer=number*102.49
-        }
-        if(converted === "euros"){
-            answer=number*1.15
-        }
-        if(converted === "usd"){
-            answer=number*1.23
-        }
-        if(converted === "dinar"){
-            answer=number*0.38
-        }
-        if(converted === "taka"){
-            answer=number*136.24
-        }
-        if(converted === "yuan"){
-            answer=number*8.97
-        }
-    
-    }
-    else if(tobeConverted === "euros" ){
-        if(converted === "INR"){
-            answer=number*89.05
-        }
-        if(converted === "pound"){
-            answer=number*0.87
-        }
-        if(converted === "usd"){
-            answer=number*1.07
-        }
-        if(converted === "dinar"){
-            answer=number*0.33
-        }
-        if(converted === "taka"){
-            answer=number*118.38
-        }
-        if(converted === "yuan"){
-            answer=number*7.79
-        }
-    
-    }
-    else if(tobeConverted === "dinar" ){
-        if(converted === "INR"){
-            answer=number*269.68
-        }
-        if(converted === "euros"){
-            answer=number*3.03
-        }
-        if(converted === "usd"){
-            answer=number*3.24
-        }
-        if(converted === "pound"){
-            answer=number*2.63
-        }
-        if(converted === "taka"){
-            answer=number*358.47
-        }
-        if(converted === "yuan"){
-            answer=number*23.59
-        }
-    
-    }
-    else if(tobeConverted === "taka" ){
-        if(converted === "INR"){
-            answer=number*0.75
-        }
-        if(converted === "euros"){
-            answer=number*0.0085
-        }
-        if(converted === "usd"){
-            answer=number*0.0090
-        }
-        if(converted === "dinar"){
-            answer=number*0.0037
-        }
-        if(converted === "pound"){
-            answer=number*0.0073
-        }
-        if(converted === "yuan"){
-            answer=number*0.066
-        }
-    
-    }
-    else if(tobeConverted === "yuan" ){
-        if(converted === "INR"){
-            answer=number*11.63
-        }
-        if(converted === "euros"){
-            answer=number*0.13
-        }
-        if(converted === "usd"){
-            answer=number*0.14  
-        }
-        if(converted === "dinar"){
-            answer=number*0.0425
-        }
-        if(converted === "taka"){
-            answer=number*15.69
-        }
-        if(converted === "yuan"){
-            answer=number*0.11
-        }
-    }
-    else if(tobeConverted === "INR" ){
-        if(converted === "pound"){
-            answer=number*0.0098
-        }
-        if(converted === "euros"){
-            answer=number*0.011
-        }
-        if(converted === "usd"){
-            answer=number*0.012
-        }
-        if(converted === "dinar"){
-            answer=number*0.0037
-        }
-        if(converted === "taka"){
-            answer=number*1.33
-        }
-        if(converted === "yuan"){
-            answer=number*0.087
-        }
-    
-    }
+    answer=number*rates[tobeConverted][converted]
     output.value=answer;
 } 
 
