@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Currency Convertor</title>
+</head>
+<body class="input">
+    
+    <div >
+        <h1 class="heading">Unit Convertor</h1>
+        <input type="text" id="inputval" value="">
+        <select name="units" id="unit" onchange=list()>
+            <option value="usd">US Dollar</option>
+            <option value="pound">Pound</option>
+            <option value="euros">Euros</option>
+            <option value="dinar">Irani Dinar</option>
+            <option value="taka">Bangladeshi taka</option>
+            <option value="yuan">Chinese Yuan</option>
+            <option value="INR">Indian Rupee</option>
+        </select>
+    </div>
+    
+    <div class="converted">
+        <input type="text" id="conversion" value="">
+        <select name="units" id="convert" onchange=outputList()>
+            <option value="usd">US Dollar</option>
+            <option value="pound">Pound</option>
+            <option value="euros">Euros</option>
+            <option value="dinar">Irani Dinar</option>
+            <option value="taka">Bangladeshi taka</option>
+            <option value="yuan">Chinese Yuan</option>
+            <option value="INR">Indian Rupee</option>
+        </select>  
+    </div>
+    <button class="btn" onclick=convert()>Convert</button>
+    <script src="script.js"></script>
+</body>
+</html>
