@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.container{
+    margin: auto;
+    width: 50%;
+    height:auto;
+    text-align: center;
+    display: block;
+    color: #fff;
+    
+
+}
+.input{
+    margin: 10%;
+
+}
+.items{
+    list-style-type: none;
+    margin: 10%;
+
+    
+}
+
+.item{
+    background-color:  #212121;
+    margin: 2%;
+    
+}
