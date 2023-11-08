@@ -78,8 +78,11 @@ const reset = () => {
     )
 }
 const quizEnd = () => {
-    document.getElementsByClassName('box').innerHTML = `
+    document.getElementById('end').innerHTML = `
+       <div style="text-align:center">
         <h3>You have completed the test</h3>
+        <h3>You scored ${right}/${total}</h3>
+    </div>
     `
 }
 loadQuestion();
